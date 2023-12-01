@@ -17,6 +17,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path, notice: 'Task was created successfully!'
     else
+      flash.now[:alert] = 'Error creating task!'
       render :new
     end
   end
@@ -46,5 +47,5 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :description, :completed)
-  end
+  end  
 end
