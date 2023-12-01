@@ -1,0 +1,10 @@
+<!-- app/views/tasks/index.html.erb -->
+<h1>Tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Task', new_task_path %>
